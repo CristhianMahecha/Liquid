@@ -1,0 +1,65 @@
+// RSI by KrosT
+// foundation.zurb.com
+// Licensed under MIT Open Source
+
+.wrapper {
+  padding: .5em;
+  margin: 0 auto;
+  
+    @include respond-to(mediun-device) {
+      width: 720px;
+    }
+
+    @include respond-to(large-device) {
+      width: 920px;
+      padding: .5em;
+    }
+
+    @include respond-to(xlarge-device) {
+      width: 1170px;
+    }
+}
+
+.units-group {
+    //clear
+    @extend %clf;
+}
+
+.units-group .units {
+    padding-left: $gutter / 2;
+    padding-right: $gutter / 2;
+    float: left;
+    min-height: 1px;
+    box-sizing: border-box;
+}
+
+.units-group [class*='push-'],
+.units-group [class*='pull-'] {
+    position: relative;
+}
+
+
+
+//SYSTEM GRIDS
+// Devices very small  (mobiles  up to 768px wide )
+// Default is mobile-first
+@include make-units(sm, $pull:false, $push:false, $offset:false);
+
+// Medium devices (tablets higher or equal to 768px width )
+@include respond-to(mediun-device) {
+    @include make-units(md, $pull:false, $push:false, $offset:false);
+    .units-group {
+        margin-left: $gutter / -2;
+        margin-right: $gutter / -2;
+    }
+}
+
+// Large devices (Desktop higher or equal to 940px width )
+@include respond-to(large-device) {
+    @include make-units(lg, $pull:true, $push:false, $offset:false);
+}
+
+// Extralarge devices (Desktop higher or equal to 1200px width )
+@include respond-to(xlarge-device) {
+    @include make-units(xl, $pull:false, $push:false, $offset:false);
+}
