@@ -37,23 +37,19 @@
 *   devices very small  (mobiles  up to 768px wide )
 *   default is mobile-first
 **/
-@include make-units(sm, $pull:false, $push:false, $offset:false);
+@include make-units(sm);
 
 // Medium devices (tablets higher or equal to 768px width )
-@include respond-to(mediun-device) {
-    @include make-units(md, $pull:false, $push:false, $offset:false);
-    .units-group {
-        margin-left: $gutter / -2;
-        margin-right: $gutter / -2;
-    }
+@include respond-to(md-device) {
+    @include make-units(md);
 }
 
 // Large devices (Desktop higher or equal to 940px width )
-@include respond-to(large-device) {
-    @include make-units(lg, $pull:true, $push:false, $offset:false);
+@include respond-to(lg-device) {
+    @include make-units(lg);
 }
 
 // Extralarge devices (Desktop higher or equal to 1200px width )
-@include respond-to(xlarge-device) {
-    @include make-units(xl, $pull:false, $push:false, $offset:false);
+@include respond-to(xl-device) {
+    @include make-units(xl);
 }
