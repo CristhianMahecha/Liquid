@@ -35,18 +35,18 @@
 
     @for $i from 1 through $units {
         @if($pull) {
-            .pull-#{$size}-#{$i} {
+           #{$class-type}pull-#{$size}-#{$i} {
                 left: units-calc($i);
              }
         }
 
         @if($push) {
-            .push-#{$size}-#{$i} {
+            #{$class-type}push-#{$size}-#{$i} {
                 right: units-calc($i);
             }
         }
 
-        .units-#{$size}-#{$i} {
+        #{$class-type}units-#{$size}-#{$i} {
             width: units-calc($i);
         }
     }
