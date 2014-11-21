@@ -1,0 +1,5 @@
+// @function units-calc
+// @return - Returns the value of the width and displacement
+@function units-calc($i) {
+    @return ($cwidth * $i);
+}

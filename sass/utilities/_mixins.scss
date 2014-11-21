@@ -1,0 +1,53 @@
+/**
+*    Mixin to generate breakpoints, defaults are three: 
+*      - md-device
+*      - lg-device
+*      - device--XL
+*    You can set more breakpoints map < utilies/_global.scss >
+**/
+
+
+@mixin respond-to($device) {
+    @if map-has-key($breakpoints, $device) {
+        @media screen and (min-width: map-get($breakpoints, $device)) {
+            @content;
+        }
+    }
+    @else {
+        @warn "Lo siento, el breakpoint `#{$device}` no ha sido encontrado, porfavor revisa la configuración."
+    }
+}
+
+
+/**
+*   @make-units
+*   $size: Name of class to use, i.e  "md" will generate .pull-md, push-md
+*   $pull: Generate pull classes - default: true, disable: false
+*   $push: Generate push classes - default: true, disable: false
+*   $offset: Generate offset classes - default: true, disable: false
+**/
+@mixin make-units(
+    $size,
+    $pull: true,
+    $push: true,
+    $offset: true
+) {
+
+    @for $i from 1 through $units {
+        @if($pull) {
+            .pull-#{$size}-#{$i} {
+                left: units-calc($i);
+             }
+        }
+
+        @if($push) {
+            .push-#{$size}-#{$i} {
+                right: units-calc($i);
+            }
+        }
+
+        .units-#{$size}-#{$i} {
+            width: units-calc($i);
+        }
+    }
+}
