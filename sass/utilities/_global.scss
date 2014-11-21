@@ -1,6 +1,21 @@
+    /** 
+    *  GRID CONFIGURATION
+    *  You have four options to adapt the grid to your needs: 
+    * 1. $units:  Number of columns default is 12 columns, but you can configure any number of columns.
+    * 2. $gutter: Space between the columns of the grid.
+    * 3. $silent.class: Silent classes do not generate our final CSS output, unless you really use it.
+    * 4. $mobile-first: Default is true, adjust the 100% width on small devices.
+    **/
+
+$units		: 12 !default;		//[1]
+$gutter		: 32px !default;		//[2]
+$silent-class	: true !default;		//[3]
+$mobile-first	: true !default;		//[4]
+$class-type	: if($silent-class, unquote("%"), unquote("."));
+
 
 $breakpoints : (
-    $md-device  : 768px,
-    $lg-device    :  940px,
-    $xl-device    :  1200px
+    md-device  : 768px,
+    lg-device    :  940px,
+    xl-device    :  1200px
 );

@@ -1,13 +1,6 @@
-@import   //MODULES
-                "modules/settings",
-                "modules/grid-fun",
+@import   //UTILITIES
+                "utilities/index",
                 //BASE
-                "base/fonts",
-                "base/normalize",
-                //BLOCKS
-                "blocks/grid",
-                "blocks/Header",
-                "blocks/Navigation",
-                "blocks/Sections";
+                "base/index";
 
 
