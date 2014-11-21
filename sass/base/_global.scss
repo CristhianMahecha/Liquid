@@ -42,6 +42,10 @@
 // Medium devices (tablets higher or equal to 768px width )
 @include respond-to(mediun-device) {
     @include make-units(md, $pull:false, $push:false, $offset:false);
+    .units-group {
+        margin-left: $gutter / -2;
+        margin-right: $gutter / -2;
+    }
 }
 
 // Large devices (Desktop higher or equal to 940px width )
